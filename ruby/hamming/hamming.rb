@@ -1,7 +1,7 @@
 class Hamming
   def self.compute(str1, str2)
     raise ArgumentError if str1.length != str2.length
-    (0..str1.length - 1).count {|i| str1[i] != str2[i] }
+    (0...str1.length).count {|i| str1[i] != str2[i] }
   end
 end
 
