@@ -1,14 +1,18 @@
 class Raindrops
-  def self.convert(i)
-    sound = ''
-    sound.concat('Pling') if i % 3 == 0
-    sound.concat('Plang') if i % 5 == 0
-    sound.concat('Plong') if i % 7 == 0
-    sound = "#{i}" if sound.size == 0
+
+  SPEAK = { 
+    3 => 'Pling', 
+    5 => 'Plang', 
+    7 => 'Plong' 
+  }
+
+  def self.convert(drop)  
+    sound = SPEAK.keys.sort.map{ |key| SPEAK[key] if drop % key == 0 }.join     
+    sound = drop.to_s if sound.empty?
     sound
   end
 end
 
 module BookKeeping
-  VERSION = 1 # Where the version number matches the one in the test.
+  VERSION = 3 # Where the version number matches the one in the test.
 end
