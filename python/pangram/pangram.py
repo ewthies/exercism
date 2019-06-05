@@ -1,2 +1,4 @@
+alphabet = set('abcdefghijklmnopqrstuvwxyz')
 def is_pangram(sentence):
-    pass
+     return set(sentence.lower()) >= alphabet
+    # return set(sentence.lower()).issuperset(alphabet)
